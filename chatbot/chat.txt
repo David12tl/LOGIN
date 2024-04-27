@@ -1,0 +1,31 @@
+import http.client
+
+conn = http.client.HTTPSConnection("open-ai21.p.rapidapi.com")
+
+payload = "{\r
+    \"messages\": [\r
+        {\r
+            \"role\": \"user\",\r
+            \"content\": \"hello\"\r
+        }\r
+    ],\r
+    \"web_access\": false,\r
+    \"system_prompt\": \"\",\r
+    \"temperature\": 0.9,\r
+    \"top_k\": 5,\r
+    \"top_p\": 0.9,\r
+    \"max_tokens\": 256\r
+}"
+
+headers = {
+    'content-type': "application/json",
+    'X-RapidAPI-Key': "1a7cc01117mshb2fdbd9b431d086p1287c6jsn4a7190de9bf0",
+    'X-RapidAPI-Host': "open-ai21.p.rapidapi.com"
+}
+
+conn.request("POST", "/conversationgpt35", payload, headers)
+
+res = conn.getresponse()
+data = res.read()
+
+print(data.decode("utf-8"))

@@ -1,0 +1,143 @@
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CONSULTOR IA.</title>
+        <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="normalize.css">
+        <link rel="stylesheet" href="style.css">
+    
+        <meta name="theme-color" content="#2091F9">
+    </head>
+    <body>
+        <header class="hero">
+            <nav class="nav container">
+                <div class="nav__logo">
+                    <h2 class="nav__title">Consultor IA.</h2>
+                </div>
+    
+                <ul class="nav__link nav__link--menu">
+                    <li class="nav__items">
+                        <a href="Index.html" class="nav__links">Inicio</a>
+                    </li>
+                    <li class="nav__items">
+                        <a href="acerca.html" class="nav__links">Acerca de</a>
+                    </li>
+                    <li class="nav__items">
+                        <a href="#" class="nav__links">Herramientas</a>
+                    </li>
+                    <li class="nav__items">
+                        <a href="#" class="nav__links">Contacto</a>
+                    </li>
+                    <li class="nav__items">
+                        <a href="#" class="nav__links"><?php
+                            $conex = mysqli_connect("localhost","root","","login"); 
+                            echo $email; 
+                            ?></a>
+                    </li>
+    
+                    <img src="close.svg" class="nav__close">
+                </ul>
+    
+                <div class="nav__menu">
+                    <img src="menu.svg" class="nav__img">
+                </div>
+            </nav>
+    
+            <section class="hero__container container">
+                <h1 class="hero__title">Aprende las nuevas tecnologias con IA.</h1>
+                <p class="hero__paragraph">Elige aprender con las diferentes herramientas que ofrecemos para el uso de intreligencia artificial</p>
+                <a href="suscrip.html" class="cta">Comienza ahora</a>
+            </section>
+        </header>
+
+         <section class="price container">
+            <h2 class="subtitle">Obten el plan perfecto para aprender</h2>
+
+            <div class="price__table">
+                <div class="price__element">
+                    <p class="price__name">Flexbox</p>
+                    <h3 class="price__price">Free</h3>
+
+                    <div class="price__items">
+                        <p class="price__features">Flexbox</p>
+                        <p class="price__features">Layouts</p>
+                        <p class="price__features">Responsive</p>
+                    </div>
+
+                    <a href="#" class="price__cta">Empieza ahora</a>
+                </div>
+
+
+                <div class="price__element price__element--best">
+                    <p class="price__name">Grid</p>
+                    <h3 class="price__price">$30/mes</h3>
+
+                    <div class="price__items">
+                        <p class="price__features">Grid</p>
+                        <p class="price__features">Implicit Grid</p>
+                        <p class="price__features">Responsive</p>
+                    </div>
+
+                    <a href="#" class="price__cta">Empieza ahora</a>
+                </div>
+
+
+                <div class="price__element">
+                    <p class="price__name">Animaciones</p>
+                    <h3 class="price__price">$40/mes</h3>
+
+                    <div class="price__items">
+                        <p class="price__features">Animation</p>
+                        <p class="price__features">Transition</p>
+                        <p class="price__features">Render Website</p>
+                    </div>
+
+                    <a href="#" class="price__cta">Empieza ahora</a>
+                </div>
+
+            </div>
+        </section>
+        <footer class="footer">
+            <section class="footer__container container">
+                <nav class="nav nav--footer">
+                    <h2 class="footer__title">Consultor IA.</h2>
+    
+                    <ul class="nav__link nav__link--footer">
+                        <li class="nav__items">
+                            <a href="Index.html" class="nav__links">Inicio</a>
+                        </li>
+                        <li class="nav__items">
+                            <a href="acerca.html" class="nav__links">Acerca de</a>
+                        </li>
+                        <li class="nav__items">
+                            <a href="suscrip.html" class="nav__links">Herramientas</a>
+                        </li>
+                       
+                    </ul>
+                </nav>
+    
+                
+            </section>
+    
+            <section class="footer__copy container">
+                <div class="footer__social">
+                    <a href="#" class="footer__icons"><img src="facebook.svg" class="footer__img"></a>
+                    <a href="#" class="footer__icons"><img src="twitter.svg" class="footer__img"></a>
+                    <a href="#" class="footer__icons"><img src="youtube.svg" class="footer__img"></a>
+                </div>
+            </section>
+        </footer>
+    
+        <script src="slider.js"></script>
+        <script src="questions.js"></script>
+        <script src="menu.js"></script>
+    </body>
+</html>

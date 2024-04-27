@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot con API de ChatGPT-4</title>
+</head>
+<body>
+    <h1>Chatbot con API de ChatGPT-4</h1>
+    <div id="chat-container">
+        <div id="chat-box"></div>
+        <input type="text" id="user-input" placeholder="Escribe un mensaje...">
+        <button onclick="enviarMensaje()">Enviar</button>
+    </div>
+
+    <script>
+        async function enviarMensaje() {
+            const mensajeUsuario = document.getElementById("user-input").value;
+            const url = 'https://chatgpt-42.p.rapidapi.com/conversationgpt4';
+            const options = {
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/json',
+                    'X-RapidAPI-Key': '32688cecd4msh9c478b1058d7d21p1fb17bjsnd7afbc70d9c5',
+                    'X-RapidAPI-Host': 'chatgpt-42.p.rapidapi.com'
+                },
+                body: JSON.stringify({
+                    "messages": [{
+                        "role": "user",
+                        "content": mensajeUsuario
+                    }],
+                    "system_prompt": "",
+                    "temperature": 0.9,
+                    "top_k": 5,
+                    "top_p": 0.9,
+                    "max_tokens": 256,
+                    "web_access": false
+                })
+            };
+
+            try {
+                const response = await fetch(url, options);
+                const result = await response.json();
+                mostrarRespuesta(result.messages[0].content);
+            } catch (error) {
+                console.error(error);
+            }
+        }
+
+        function mostrarRespuesta(respuesta) {
+            const chatBox = document.getElementById("chat-box");
+            const respuestaDiv = document.createElement("div");
+            respuestaDiv.innerHTML = `<strong>Chatbot:</strong> ${respuesta}`;
+            chatBox.appendChild(respuestaDiv);
+        }
+    </script>
+</body>
+</html>
